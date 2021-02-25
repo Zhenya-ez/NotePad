@@ -1,0 +1,350 @@
+<!-- clearfix для float left, right -->
+.clearfix:after {
+	content: "";
+	display: table;
+	width: 100%;
+	clear: both;
+}
+
+
+<!-- Выбор рейтинга в форме -->
+<div class="rating-area">
+	<input type="radio" id="star-5" name="rating" value="5">
+	<label for="star-5" title="Оценка «5»"></label>	
+	<input type="radio" id="star-4" name="rating" value="4">
+	<label for="star-4" title="Оценка «4»"></label>    
+	<input type="radio" id="star-3" name="rating" value="3">
+	<label for="star-3" title="Оценка «3»"></label>  
+	<input type="radio" id="star-2" name="rating" value="2">
+	<label for="star-2" title="Оценка «2»"></label>    
+	<input type="radio" id="star-1" name="rating" value="1">
+	<label for="star-1" title="Оценка «1»"></label>
+</div>
+
+.rating-area {
+	overflow: hidden;
+	width: 265px;
+	margin: 0 auto;
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+	float: right;
+	width: 42px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 32px;
+	line-height: 32px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+.rating-area > input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: gold;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px goldenrod;
+}
+.rate-area > label:active {
+	position: relative;
+}
+
+
+<!-- Вывод статичного рейтинга -->
+<div class="rating-result">
+	<span class="active"></span>	
+	<span class="active"></span>    
+	<span class="active"></span>  
+	<span></span>    
+	<span></span>
+</div>
+
+.rating-result {
+	width: 265px;
+	margin: 0 auto;
+}
+.rating-result span {
+	padding: 0;
+	font-size: 32px;
+	margin: 0 3px;
+	line-height: 1;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-result > span:before {
+	content: '★';
+}
+.rating-result > span.active {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+
+
+<!-- Изменение цвета при наведении -->
+.menu a:hover {
+	color: green;
+}
+
+
+<!-- Изменение цвета при нажатии -->
+a:link {
+	color: #0000d0; /* Цвет ссылок */
+	}
+	a:visited {
+	color: #900060; /* Цвет посещенных ссылок */
+	}
+	a:active {
+	color: #f00; /* Цвет активной ссылки */ 
+	} 
+
+
+<!-- Выпадающий список -->
+<select>
+	<option>Пункт 1</option>
+	<option>Пункт 2</option>
+</select>
+
+
+<!-- Выбор даты -->
+	<form>
+	<p>Выберите дату: 
+	<input type="date" name="calendar" value="2012-06-01"
+	max="2012-06-04" min="2012-05-29">
+	<input type="submit" value="Отправить"></p>
+	</form>
+
+
+<!-- Кнопка -->
+.button {
+	background: #3984f3;
+	color: #fff;
+	display: block;
+	width: 180px;
+	padding: 10px 0;
+	margin-left: 1150px;
+	margin-top: 760px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 24px;
+	float: left;
+	position: absolute;
+}
+
+.button:hover {
+	color: black;
+}
+
+
+<!-- Секция по высоте экрана -->
+header {
+	height: 100vh;
+	background: url(../img);
+}
+
+
+<!-- У всех элементов будут границы -->
+* {
+	border: 1px solid red;
+}
+
+
+<!-- Для section -->
+header,
+article,
+footer {
+	width: 1600px;
+	margin: 0 auto;
+}
+
+
+<!-- Увеличение элемента при наведении -->
+<div class="gallery">
+	<img src="img/kathmandu.png" alt="Kathmandu" class="Kathmandu" />
+	<p class="Kathmandu_text">Kathmandu, Nepal</p>
+	</div>
+
+	.gallery:hover {
+	-webkit-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+
+<!-- Линия с любой стороны  -->
+.description {
+border-left: 2px solid tomato;
+}
+
+
+<!-- Таблица -->
+<table>
+	<caption>List Elements</caption>
+	<thead>
+		<tr>
+			<th>List</th>
+			<th>Tags</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Tag</td>
+			<td>Link</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<!-- Для float после последнего элемента используем пустой div.class="clear" -->
+.clear {
+	clear: both;
+}
+
+
+<!-- Flex центрирование -->
+.parent {
+	display: flex;
+	height: 300px; /* Или что угодно */
+}
+
+.child {
+	width: 100px;  /* Или что угодно */
+	height: 100px; /* Или что угодно */
+	margin: auto;  /* Магия! */
+}
+
+<!-- Центр -->
+position: relative;
+left: 50%;
+transform: translate(-50%, 0);
+
+
+<!-- Обращение к элементу -->
+.header_text p:last-child {
+	font-weight: bold;
+}
+
+
+<!-- Кнопка с бликом  -->
+.header_content_button button {
+	width: 382px;
+	height: 68px;
+	background-color: #FF9638;
+	border-radius: 6px;
+	font-weight: bold;
+	color: #292929;
+	border: none;
+	<!-- Ставим relative -->
+	position: relative;
+	<!-- Чтобы блик не выходил за пределы кнопки  -->
+	overflow: hidden;
+}
+
+.header_content_button button::before {
+	content: '';
+	display: block;
+	width: 50px;
+	height: 100%;
+	position: absolute;
+	background-color: #ffffff;
+	<!-- Меняет угол наклона  -->
+	transform: skewX(-20deg);
+	top: 0;
+	<!-- Размытие  -->
+	filter: blur(15px);
+	<!-- Спрятали блик  -->
+	left: -200px;
+	<!-- Анимация постоянная обращаемся как назвали -->
+	animation: xxx 3500ms ease-in-out infinite;
+}
+
+@keyframes xxx {
+	0% {
+		left: -200%;
+	}
+	100% {
+		left: 150%;
+	}
+}
+
+
+<!-- gradient для текста -->
+.header_school-okten {
+	font-size: 202px;
+	font-weight: 900;
+	text-transform: uppercase;
+
+	background: linear-gradient(98deg, #3298F2, #ff9638);
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+
+<!-- Текст с обводкой  -->
+.header_school2 {
+	font-size: 168px;
+	font-weight: 900;
+	color: #ffffff;
+	-webkit-text-stroke-color: #3298F2;
+	-webkit-text-stroke-width: 2px;
+}
+
+
+<!-- Кнопка из 3 кругов и иконки -->
+<!--  Подключаем стили https://fontawesome.com напрямую через cdn https://perfkirill.ru/stati/html-i-css/font-awesome-5-kak-podklyuchit-k-sajtu-(napryamuyu-i-cdn).-->
+<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+
+<div class="play_wrap">
+	<div class="play_button">
+		<!-- Подключаем иконку через https://fontawesome.com скопировав ссылку выбраной иконки -->
+		<div class="play">
+			<i class="fas fa-play"></i>
+		</div>
+	</div>
+
+.play_wrap {
+	width: 156px;
+	position: absolute;
+	height: 156px;
+	bottom: 110px;
+	border: 1px solid #ff9638;
+	left: 50%;
+	margin-left: -78px;
+}
+
+.play_button {
+	width: 96px;
+	height: 96px;
+	border: 2px solid #ff9638;
+}
+
+.play {
+	width: 82px;
+	height: 82px;
+	border: 3px solid #ff9638;
+	background-color: #c4c4c4;
+}
+
+.play i {
+	font-size: 25px;
+	color: #ffffff;
+}
+
+
+<!-- Кнопка исчезает -->
+.header_callback {
+	display: none;
+}
+
